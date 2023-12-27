@@ -1,0 +1,343 @@
+
+@font-face{
+  font-family: biorhyme;
+  src: url(./fonts/BioRhyme-VariableFont_wdth\,wght.ttf)
+}
+@font-face{
+  font-family: biorhymeexp;
+  src: url(./fonts/BioRhymeExpanded-Bold.ttf)
+}
+@font-face{
+  font-family: blair;
+  src: url(./fonts/Blair\ ITC\ Medium.otf)
+}
+@font-face{
+  font-family: cako;
+  src: url(./fonts/Cako-Black.ttf)
+}
+@font-face{
+  font-family: flama;
+  src: url(./fonts/FlamaCondensed-Bold.ttf)
+}
+
+
+/* Aquí definimos las Custom properties */
+:root {
+    /* colores principales */
+    --naraja: rgb(246,140,104);
+    --rosa: rgb(229,90,123);
+    --verde: rgb(158,196,118);
+    --azul: rgb(0,101,128);
+    /* colores segundarios */
+    --berengena: rgba(154,52,79,0.8);
+    --turquesa: rgba(92,188,198,0.8);
+    --gris: rgba(166,155,149,0.8);
+    /* Tipografía */
+    --tipo-principal: Helvetica, Arial, sans-serif;
+    --tipo-secundaria: Verdana;
+  }
+  
+  /* Reseteamos los margin y paddings de todas las etiquetas */
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align: baseline;
+  }
+  
+  /* Evitamos problemas con las imagenes */
+  img, picture, video, iframe, figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /* opcional */
+    -o-object-fit: cover;
+       object-fit: cover;
+    /* opcional */
+    -o-object-position: center center;
+       object-position: center center;
+  }
+  
+  /* Reseteamos los enlaces para funcionar como cajas... */
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+  }
+  
+  /* ... excepto los que se encuentran en párrafos */
+  p a {
+    display: inline;
+  }
+  
+  /* Quitamos los puntos de los <li> */
+  li {
+    list-style-type: none;
+  }
+  
+  /* Configuramos anclas suaves */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Desactivamos estilos por defecto de las principales etiquetas de texto */
+  h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Evitamos problemas con los pseudoelementos de quotes */
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+  }
+  
+  /* Configuramos el texto que seleccionamos */
+  ::-moz-selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  ::selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  
+  /* Nivelamos problemas de tipografías y colocación de formularios */
+  form, input, textarea, select, button, label {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    /* opcional */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  
+  /* Reseteamos las tablas */
+  table, tr, td {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Evitamos problemas con los SVG */
+  svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+  }
+  
+  
+  /* Configuramos la tipografía para toda la web */
+  body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--tipo-principal);
+    color: var(--negro);
+    /* opcional */
+    line-height: 1.4em;
+    /* opcional */
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    /* opcional */
+    font-smooth: always;
+    /* opcional */
+    -webkit-font-smoothing: antialiased;
+    /* opcional */
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .landing{
+    width: 100vw;
+    height: 100vh;   
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+  }
+  .header{
+    width: 98vw;
+    padding: 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__figure{
+    width: 10vw;
+  }
+  .header__nav{
+    width: 40vw;
+    padding: 1vw;
+  }
+  .nav__ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .nav__boton4{
+    width: 12rem;
+    color: var(--verde);
+    background-color:  rgba(255,255,255,0.3);
+    backdrop-filter: blur(4px); 
+    border: 1px solid white;
+    /* border: 2px solid var(--verde); */
+    border-radius: 8px;
+    transition: 1.5s;
+    /* background: none;    */
+    font-family:biorhymeexp ;
+    line-height: 1;
+    padding: 1em 2em
+  }
+  .nav__boton4:hover{
+    color: white;
+    background-color: var(--verde); 
+  }
+  .nav__boton2{
+    width: 12rem;
+    color: var(--rosa);
+    background-color:  rgba(255,255,255,0.3);
+    backdrop-filter: blur(4px); 
+    border: 1px solid white;
+    /* border: 2px solid var(--rosa); */
+    border-radius: 8px;
+    transition: 1.5s;
+    /* background: none;    */
+    font-family:biorhymeexp ;
+    line-height: 1;
+    padding: 1em 2em
+  }
+  .nav__boton2:hover{
+    color: white;
+    background-color: var(--rosa); 
+  }
+  .nav__boton3{
+    width: 12rem;
+    color: var(--naraja);
+    background-color:  rgba(255,255,255,0.3);
+    backdrop-filter: blur(4px); 
+    border: 1px solid white;
+    border-radius: 8px;
+    transition: 1.5s;
+    font-family:biorhymeexp ;
+    line-height: 1;
+    padding: 1em 2em
+  }
+  .nav__boton3:hover{
+    color: white;
+    background-color: var(--naraja); 
+  }
+  .nav__boton1{
+    width: 12rem;
+    color: var(--azul);
+    background-color:  rgba(255,255,255,0.3);
+    backdrop-filter: blur(4px); 
+    border: 1px solid white;
+    border-radius: 8px;
+    transition: 1.5s;   
+    font-family:biorhymeexp ;
+    line-height: 1;
+    padding: 1em 2em
+  }
+  .nav__boton1:hover{
+    color: white;
+    background-color: var(--azul); 
+  }
+  .nav__li{
+    font-size: 1.5em; 
+    font-family:biorhyme;
+    font-weight: 700;
+  }
+  
+ 
+  .landing__div{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-left: 15vw;
+    margin-top: 20vh;
+    
+  }
+  .landing__h1{
+    font-family:biorhyme;
+    font-size: 6em;
+    font-weight: 900;
+    color:var(--azul);
+  }
+  .landing__slider{
+    width: 30vw;
+    height: 5vh;
+    padding: 2%;
+    margin-left: 0;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(4px); 
+    border: 1px solid white;
+    border-radius: 8px;
+    
+   
+  }
+  .slider__animacion{
+    display: flex;
+    justify-content: center;
+    animation: scroll 12s linear infinite ;
+    width: calc(500px * 4);
+  }
+  .animacion__texto{
+   
+    width:500px;
+   
+  }
+  .animacion__texto{
+    font-size: 2em;
+    font-family: blair;
+    color:var(--naraja);
+  }
+  @keyframes scroll {
+    0%{
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-500px * 2);
+        -webkit-transform: translateX(calc(-500px * 2));
+    }
+    
+  }
+  .div{
+    width: 30%;
+    position: absolute;
+    top: 20vh;
+    right: 8vw;
+   animation-name:float ;
+   animation-duration: 1s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   animation-timing-function: ease-in-out;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(-5px);
+
+    }
+    100%{
+        transform: translateY(5px);
+    }
+}
+
+  
